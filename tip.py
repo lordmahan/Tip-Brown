@@ -127,7 +127,7 @@ class Tip(commands.Cog):
                     else:
                         if tipto == str(self.bot.user.id):
                             try:
-                                move_istrue = client.move(tipfrom, 'tipsugar_wallet', float(amount))
+                                move_istrue = client.move(tipfrom, 'tipBRWN_wallet', float(amount))
                             except:
                                 embed = discord.Embed(color=0xff0000)
                                 embed.set_author(
