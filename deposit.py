@@ -38,7 +38,7 @@ class Deposit(commands.Cog):
 
             account = str(ctx.author.id)
             user_name = ctx.author.display_name
-            address = client.getaddressesbylabel(account)
+            address = client.getaccountaddress(account)
 
             embed = discord.Embed(
                 title="**Your deposit address**",
