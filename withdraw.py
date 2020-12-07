@@ -104,13 +104,14 @@ class Withdraw(commands.Cog):
                     else:
                         try:
                             txid = client.sendfrom(account, address, float(sendamount))
-                        except:
+                        except Exception as e:
+                            print(e)
                             embed = discord.Embed(color=0xff0000)
                             embed.set_author(
                                 name=ctx.author.display_name,
                                 icon_url=ctx.author.avatar_url_as(format='png', size=256))
                             embed.add_field(
-                                name="invalid amount.\n(You can not specify the einth decimal place or smaller than that.)",
+                                name=e,
                                 value="`{0}`".format(amount))
                             embed.set_footer(text="Tip BRWN {0} [Owner: {1}]".format(config.VERSION, self.bot.get_user(config.OWNER_ID)),
                                              icon_url=self.bot.user.avatar_url_as(format='png', size=256))
